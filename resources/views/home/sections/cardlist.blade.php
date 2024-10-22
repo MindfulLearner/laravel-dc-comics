@@ -8,10 +8,18 @@
                 @foreach ($comics as $comic)
                     <div class="card-container-for">
                         <div class="card">
-                            <img src="{{ $comic['thumb']}}" alt="">
+                            <img src="{{ $comic['image']}}" alt="">
                         </div>
                         <div>
                             {{ $comic['series'] }}
+                        </div>
+                        <div>
+                            price solo primi due numeri
+                            {{ $comic['price'] }}
+                        </div>
+                        <div>
+                            artist
+                            {{ $comic['artists']}}
                         </div>
                     </div>
                 @endforeach
