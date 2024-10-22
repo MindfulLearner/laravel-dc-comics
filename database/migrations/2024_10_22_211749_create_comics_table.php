@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('comics', function (Blueprint $table) {
             $table->id(); // id incrementale
-            $table->string('image, 1024')->nullable(false);
-            $table->string('series, 64')->nullable(false);
-            $table->integer('price')->unsigned();
-            $table->string('artists, 50')->nullable(true);
+            $table->string('image', 1024)->nullable(false);
+            $table->string('series', 64)->nullable(false);
+            $table->decimal('price', 8, 2)->unsigned();
+            $table->string('artists', 50)->nullable(true);
             $table->timestamps(); // data di creazione
         });
     }

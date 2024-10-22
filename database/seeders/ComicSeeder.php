@@ -21,10 +21,9 @@ class ComicSeeder extends Seeder
             $newComic->series = $comic['series'];
 
             $price = str_replace('$', '', $comic['price']);
-            $priceParts = explode(".", $price);
-            $newComic->price = (int) $priceParts[0];
+            $price = floatval($price);
+            $newComic->price = $price;
 
-            $newComic->price = $price[0];
             $newComic->artists = $comic['artists'][0];
             $newComic->save();
         }
