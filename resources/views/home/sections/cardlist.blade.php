@@ -14,7 +14,6 @@
                             {{ $comic['series'] }}
                         </div>
                         <div>
-                            price solo primi due numeri
                             {{ $comic['price'] }}
                         </div>
                         <div>
