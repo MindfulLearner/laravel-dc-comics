@@ -60,7 +60,7 @@ box-sizing: border-box;
 
 // jumbotron swag container
 .jumbotron-container {
-background-image: url("/images/jumbotron.jpg");
+background-image: url("../../public/images/jumbotron.jpg");
 height: 400px;
 }
 
@@ -152,7 +152,7 @@ img {
 
 // footer
 .bg-image {
-    background-image: url("images/footer-bg.jpg");
+    background-image: url("../../public/images/footer-bg.jpg");
 }
 
 .container-footer {

@@ -1,18 +1,14 @@
+version: '3'
+
 services:
   laravel-docker:
     container_name: laravel-docker
     build:
       context: .
-      args:
-        UID: ${UID}  # Prende l'UID dall'host
-        GID: ${GID}  # Prende il GID dall'host
-    user: "${UID}:${GID}"  # Imposta l'utente e il gruppo con UID e GID
     volumes:
       - ./:/var/www/html:cached
     ports:
       - 9000:80
-    environment:
-      APACHE_DOCUMENT_ROOT: /var/www/html/public
 
   mysql_db:
     image: mysql:latest
@@ -22,14 +18,16 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - mysql_data:/var/lib/mysql  # Add this line to persist data
+      - mysql_data:/var/lib/mysql  # Persistenza dei dati
 
   phpmyadmin:
     image: phpmyadmin:latest
+    environment:
+      PMA_HOST: mysql_db  # Aggiungi questo per puntare a MySQL
+      MYSQL_ROOT_PASSWORD: root
     ports:
       - 9001:80
-    environment:
-      - PMA_ARBITRARY=1
 
 volumes:
-  mysql_data:  # Define the volume
+  mysql_data:  # Definizione del volume per la persistenza dei dati
+
