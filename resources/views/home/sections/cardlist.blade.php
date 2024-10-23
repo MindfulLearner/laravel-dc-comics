@@ -18,7 +18,7 @@
                     {{ $comic['price'] }}
                 </div>
                 <!-- bottone che portera in una scheda show -->
-                <a href="{{ route('comics.show', $loop->index) }}" class="btn btn-primary">Info</a>
+                <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-primary">Info</a>
             </div>
             @endforeach
         </div>

@@ -1,8 +1,9 @@
 <!-- show.blade.php -->
+@vite('resources/js/app.js')
 
 <div class="container-show">
     <div class="card-showed">
-        <div>
+        <div class="image-show">
             <img src="{{ $comic['image'] }}" alt="">
         </div>
         <div class="title-show">
@@ -10,9 +11,6 @@
         </div>
         <div class="description-show">
             <p>{{ $comic['description'] }}</p>
-        </div>
-        <div class="image-show">
-            <img src="{{ $comic['image'] }}" alt="">
         </div>
         <div class="series-show">
             <p>{{ $comic['series'] }}</p>

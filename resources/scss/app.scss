@@ -191,4 +191,37 @@ ul>.swag-li {
     background-color: rgb(2, 130, 249);
     border-radius: 5px; 
     color: white;
+    transition: background-color 0.3s; 
+
+    &:hover {
+        background-color: rgb(1, 100, 200); 
+    }
+}
+
+.image-show {
+    height: 400px;
+    width: 400px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.image-show img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+}
+
+.description-show {
+    margin-top: 20px;
+    line-height: 1.5; 
+    color: #f0f0f0; 
+}
+
+.container-show {
+    background-color: black; 
+    color: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
