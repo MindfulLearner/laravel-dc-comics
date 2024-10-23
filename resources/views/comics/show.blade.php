@@ -27,5 +27,6 @@
         <div class="writers-show">
             <p>{{ $comic['writers'] }}</p>
         </div>
+        <a href="{{ route('comics.index') }}" class="btn btn-primary">Back</a>
     </div>
 </div>
