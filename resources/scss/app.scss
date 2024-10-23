@@ -225,3 +225,48 @@ ul>.swag-li {
     border-radius: 10px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
 }
+
+
+.container-edit {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+
+    .edit-form {
+        .form-group {
+            margin-bottom: 15px;
+
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            input.form-control {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+
+                &:focus {
+                    border-color: rgb(2, 130, 249);
+                    box-shadow: 0 0 5px rgba(2, 130, 249, 0.5);
+                }
+            }
+        }
+
+        .btn-primary {
+            margin-top: 10px;
+            background-color: rgb(2, 130, 249);
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(1, 100, 200);
+            }
+        }
+    }
+}
