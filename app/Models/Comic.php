@@ -16,4 +16,5 @@ class Comic extends Model
         'artists',
         'writers',
     ];
+
 }

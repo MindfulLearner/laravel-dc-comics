@@ -18,6 +18,8 @@ Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show'
 Route::get('/comics/{id}/edit', [ComicController::class, 'edit'])->name('comics.edit');
 Route::put('/comics/{id}', [ComicController::class, 'update'])->name('comics.update');
 
+//destroy
+Route::delete('/comics/{id}', [ComicController::class, 'destroy'])->name('comics.destroy');
 
 // laraval
 // checking health

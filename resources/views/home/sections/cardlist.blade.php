@@ -19,8 +19,28 @@
                 </div>
                 <!-- bottone che portera in una scheda show -->
                 <a href="{{ route('comics.show', $comic['id']) }}" class="btn btn-primary">Info</a>
+
+                <!-- prima chieder la conferma tramite js -->
+                <form action="{{ route('comics.destroy', $comic['id']) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button class="deleteButton btn stranger-danger">Delete</button>
+                </form>
+
             </div>
             @endforeach
+            <script>
+                // logica conferma cancellazione
+                document.querySelectorAll(".deleteButton").forEach(function(button) {
+                    button.addEventListener("click", function(event) {
+                        if (!confirm("Sei sicuro di voler cancellare questo comic?")) {
+                            event.preventDefault();
+                            //manda a url di cancellazione
+                            // esce solo se si clicca cancel
+                        }
+                    });
+                });
+            </script>
         </div>
         <div class="load-more">
             Load More
