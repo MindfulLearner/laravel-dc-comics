@@ -28,5 +28,7 @@
             <p>{{ $comic['writers'] }}</p>
         </div>
         <a href="{{ route('comics.index') }}" class="btn btn-primary">Back</a>
+        <!-- bottone che ti porta in una pagina che ti permette di editare il comic scliccato -->
+        <a href="{{ route('comics.edit', $comic['id']) }}" class="btn btn-primary">Edit</a>
     </div>
 </div>

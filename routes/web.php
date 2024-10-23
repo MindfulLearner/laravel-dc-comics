@@ -15,7 +15,7 @@ Route::resource('/', ComicController::class)->names('comics');
 Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
 
 
-
+Route::get('/comics/{id}/edit', [ComicController::class, 'edit'])->name('comics.edit');
 
 
 // laraval
