@@ -7,15 +7,19 @@ use Illuminate\Http\Request;
 
 use App\Models\Comic;
 
+
+/**
+ * this is a controller for the comics it will handle the logic for the comics
+ */
 class ComicController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * this will return the view of the comics, it will get the comics from the database and pass them to the view
      */
     public function index()
     {
-    $comics = Comic::get();
-    return view('comics.index', compact('comics'));
+        $comics = Comic::get();
+        return view('comics.index', compact('comics'));
     }
 
     /**

@@ -13,13 +13,26 @@ return new class extends Migration
      */
     public function up(): void
     {
+        /**
+         * we will add title
+         * description
+         * thumb as image
+         * price
+         * seriesc type
+         * artists array that we will implode
+         * and writers array that we will implode
+         */
         Schema::create('comics', function (Blueprint $table) {
             $table->id(); // id incrementale
+            $table->string('title', 100)->nullable(false);
+            $table->text('description')->nullable(true);
             $table->string('image', 1024)->nullable(false);
             $table->string('series', 64)->nullable(false);
             $table->decimal('price', 8, 2)->unsigned();
-            $table->string('artists', 50)->nullable(true);
-            $table->timestamps(); // data di creazione
+            $table->string('type', 64)->nullable(false);
+            $table->string('artists', 255)->nullable(true);
+            $table->string('writers', 255)->nullable(true);
+            $table->timestamps(); 
         });
     }
 

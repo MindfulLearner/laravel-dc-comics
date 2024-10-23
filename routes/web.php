@@ -5,17 +5,21 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     $comics = config('comicsdata');
-
-
 //     return view('welcome', compact('comics'));
 // });
 
-Route::resource('/', ComicController::class);
+
+// this will return the view of the comics
+Route::resource('/', ComicController::class)->names('comics');
+
+Route::get('/comics/{id}', [ComicController::class, 'show'])->name('comics.show');
+
+
+
 
 
 // laraval
 // checking health
-
 Route::get('/health', function () {
     return response()->json(['status' => 'healthy'], 200);
 });
