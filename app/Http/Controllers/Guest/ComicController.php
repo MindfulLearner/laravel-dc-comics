@@ -27,7 +27,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -35,7 +35,23 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validazione dei dati
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'required|string|url',
+            'series' => 'required|string',
+            'price' => 'required|min:0|max:100|numeric',
+            'type' => 'required|string',
+            'artists' => 'required|string',
+            'writers' => 'required|string',
+        ]);
+
+        // salva il comic
+        $comic = Comic::create($request->all());
+
+        // redirect alla show del comic creato
+        return redirect()->route('comics.show', ['id' => $comic->id]);
     }
 
     /**
@@ -62,7 +78,25 @@ class ComicController extends Controller
     public function update(Request $request, string $id)
     {
         $comic = Comic::find($id);
+        // controllare la validita del request esempio i dati  devono essere giusti 
+        // questo basta e rilascera errors nella session che potra essere accessibile tramite errors 
+        // $errorcontainer nella view
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'required|string|url',
+            'series' => 'required|string',
+            'price' => 'required|min:0|max:100|numeric',
+            'type' => 'required|string',
+            'artists' => 'required|string',
+            'writers' => 'required|string',
+        ]);
+       
+      // messo qui perche prima fa il controllo e poi aggiorna      
         $comic->update($request->all());
+        // setutto va bene aggiorna il comic
+
+        // redirect alla show del comic aggiornato
         return redirect()->route('comics.show', ['id' => $comic->id]);
     }
 
