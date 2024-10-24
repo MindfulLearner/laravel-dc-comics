@@ -3,6 +3,23 @@
 @vite('resources/js/app.js')
 
 <div class="container-edit">
+
+    <!-- se ci sono errori li stampa -->
+    @if ($errors->any())
+        <div class="error-container">
+            <div class="alert alert-danger">
+                <ul>
+                    <!-- utilizza error->all per stampare tutti gli errori -->
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
+
+
+
  <form action="{{ route('comics.update', $comic['id']) }}" method="POST" class="edit-form">
     @csrf
     @method('PUT')
