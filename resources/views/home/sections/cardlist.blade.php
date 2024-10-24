@@ -43,7 +43,9 @@
             </script>
         </div>
         <div class="load-more">
-            Load More
+            <a href="{{ route('comics.create') }}" class="btn btn-primary">
+                add more comics
+            </a>
         </div>
     </div>
 </div>

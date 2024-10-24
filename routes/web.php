@@ -27,6 +27,12 @@ Route::get('/health', function () {
     return response()->json(['status' => 'healthy'], 200);
 });
 
+
+//create store
+Route::post('/comics', [ComicController::class, 'store'])->name('comics.store');
+
+
+
 Route::get('/health-db', function () {
     try {
         DB::connection()->getPdo();
