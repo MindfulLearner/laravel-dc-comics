@@ -43,6 +43,8 @@
             </script>
         </div>
         <div class="load-more">
+            <!-- passiamo attrverso controller, non c'e' bisogno di route perche non restituisce nulla o non chiediamo un determinato id -->
+            <!-- mentre se volessimo passare un id allora dovremmo creare una route -->
             <a href="{{ route('comics.create') }}" class="btn btn-primary">
                 add more comics
             </a>

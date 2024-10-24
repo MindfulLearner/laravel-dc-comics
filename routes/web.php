@@ -21,15 +21,15 @@ Route::put('/comics/{id}', [ComicController::class, 'update'])->name('comics.upd
 //destroy
 Route::delete('/comics/{id}', [ComicController::class, 'destroy'])->name('comics.destroy');
 
+//create store
+Route::post('/comics', [ComicController::class, 'store'])->name('comics.store');
+
+
 // laraval
 // checking health
 Route::get('/health', function () {
     return response()->json(['status' => 'healthy'], 200);
 });
-
-
-//create store
-Route::post('/comics', [ComicController::class, 'store'])->name('comics.store');
 
 
 
